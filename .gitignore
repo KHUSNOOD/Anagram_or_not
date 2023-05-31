@@ -1,32 +1,36 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+#include<iostream>
+using namespace std;
+int main(){
+    // Declaring the 2 string:
+    string str1="decimal";
+    string str2="medical";
+    // Storing the length of string as 'n':
+    int n=str1.length();
+    // Declaring an array for using hashing technique:
+    int h[26];
+    for(int i=0; i<n; i++){
+        // Updating the array h[]:
+        h[str1[i]-97]++;
+    }
+    for(int i=0; i<n; i++){
+        // Again updaing the array h[]:
+        h[str2[i]-97]--;
+    }
+    // Declaring the count for storing the arrray value not equal to 0; 
+    int count=0;
+    for(int i=0; i<26; i++){
+        if(h[i]!=0){
+            count++;
+        }
+        
+    }
+    // Printing out the result of Anagram or not :
+    if(count>0){
+        cout<<"Not Anagram number:";
+    }
+    else{
+        cout<<"Anagram number:";
+    }
+    
+    return 0;
+}
